@@ -1,0 +1,193 @@
+--Customer Table
+
+Create Table Customer(
+
+SSN int primary key not null,
+
+First_Name varchar(50) not null, 
+
+Last_Name varchar(50) not null,
+
+DOB DATE not null,
+
+Height Real not null,
+
+Weight int not null,
+)
+
+
+--Automobile table
+
+Create Table Automobile(
+
+Owner_SSN int primary key not null,
+
+Make varchar(50) null,
+
+Model varchar(50) null,
+
+VIN varchar(50) null,
+)
+
+
+--Address Table 
+
+Create Table Address(
+
+Owner_SSN int primary key not null,
+
+Street_Address_Number int null,
+
+Street_Address varchar(50) null,
+
+Apartment_Number varchar(50) null,
+
+City varchar(50) null,
+
+State varchar(10) null,
+
+Zip int,
+)
+
+--10 records in Customer Table
+INSERT [dbo].[Customer] VALUES
+(123456789, 'Michael', 'Schumacher', '1997-08-14', 5.11, 160),
+(987654321, 'Big', 'Boy', '1972-12-25', 5.10, 95),
+(567891234, 'Geddy', 'Lee', '1953-07-29', 6.2, 150 ),
+(654789321, 'Alex', 'Lifeson', '1953-08-27', 5.8, 180 ),
+(887362513, 'Neil', 'Peart', '1952-09-12', 5.8, 145),
+(767823455, 'Johnny', 'Jammerson', '1990-01-14', 5.5, 190),
+(728993346, 'Shaq', 'Attack', '1972-03-06', 7.1, 280),
+(656419823, 'Jimmy', 'Johnson', '1984-05-19', 6.4, 220),
+(123123321, 'Gabriel', 'Davidoso', '1995-06-24', 6.0, 210),
+(827349182, 'The', 'Man', '1989-10-11', 6.5, 240)
+
+--3 automobiles per each customer in customer table
+INSERT [dbo].[Automobile] VALUES
+(123456789, 'Genesis Coupe', 'Hyundai', '2387d78c78s9'),
+(123456789, 'Skyline GT-R, 'Nissan', '98d9c920d09329c'),
+(123456789, 'Chevelle SS, 'Chevrolet', '3c9sdwc0e93mv930'),
+(987654321, 'Mustang GT', 'Ford', '43x89c839c829'),
+(987654321, 'Sentra', 'Nissan', '34239c98c8939c8793'),
+(987654321, 'Camry', 'Toyota', '21343x2x323223432x'),
+(567891234, 'Barchetta', 'Fiat', '327899c89c98289x32'),
+(567891234, 'Aventador', 'Lamborghini', '87c8767828732x832'),
+(567891234, 'Huracan', 'Lamborghini', '86778xcv8x87x8z'),
+(654789321, 'Scooter', 'Razor', '324bd32788237x87783'),
+(654789321, 'Golf R', 'Volkswagen', '2348923d89x38229'),
+(654789321, 'Beetle', 'Volkswagen', '32bx23yuxb23ybyu2'),
+(887362513, 'Laferarri', 'Ferarri', '9832c98289c289c23c3'),
+(887362513, 'NSX', 'Nissan', '234982x89x98322398x2'),
+(887362513, 'Viper', 'Dodge', '123421x322x32x323x'),
+(767823455, 'Wraith', 'Rolls Royce', '1238787c783c7832'),
+(767823455, 'Vantage', 'Aston Martin', '93090c3049c09303'),
+(767823455, 'DB13', 'Aston Martin', '239889c8932c982398'),
+(728993346, 'Civic, 'Honda', '677667cc67xw76x7878'),
+(728993346, 'Accord, 'Honda', '3298c892389c892389x3'),
+(728993346, 'xB', 'Nissan', '2989298x293x98289389'),
+(656419823, 'Ranger', 'Ford', '123423b23iu2bn3n23'),
+(656419823, 'Elise', 'Lotus', '123v123v21g3v1gv232'),
+(656419823, 'Exige', 'Lotus', '98389c893489c39823'),
+(123123321, 'Z', 'Nissan', '3214b23b3b2432n4n2'),
+(123123321, 'Integra', 'Acura', '329902390c092390'),
+(123123321, 'Rx7', 'Mazda', '23b23b4h2b3423b42n3423'),
+(827349182, 'WRX', 'Subaru', '3324n234n23n423n42'),
+(827349182, 'BRZ', 'Subaru', '2398989x298x8923x'),
+(827349182, 's2000', 'Honda', '23892983289x898923x982')
+
+--2 addresses per person
+INSERT [dbo].[Address] VALUES
+(123456789, 78, 'Tuscany Dr', NULL, 'LaPlace', 'LA', 70063)
+(123456789, 22, 'Blue Rd', '1080b', 'Gregory', 'NY', 89210)
+(987654321, 432, 'Extreme Ln', '500c', 'New York City' 'NY', 89332)
+(987654321, 2, 'People Dr', NULL, 'Las Angeles', 'CA', 58383)
+(567891234, 948, 'Big Rd', NULL, 'Big Town', 'CO', 32312)
+(567891234, 10003, 'Little Rd', '1239', 'Little Town', 'MS', 62217)
+(654789321, 231, 'Bingo Pl', '123d', 'Bingo Town', 'WA', 78097)
+(654789321, 98, 'Point Rd', NULL, 'New Roads', 'LA', 70890)
+(887362513, 11902, 'Magazine St', NULL, 'New Orleans', 'LA', 70065)
+(887362513, 32234, 'Pound Rd', '432', 'Dog Town', 'TN', 89972)
+(767823455, 12, 'Tiger Dr', '124d', 'Baton Rouge', 'LA', 70809)
+(767823455, 5432, 'Cherry Ln', NULL, 'Houston', 'TX', 64329)
+(728993346, 43, 'Kings Ln', NULL, 'Ventress', 'LA', 23412)
+(728993346, 123, 'Rodeo Dr', NULL, 'Sacramento', 'CA', 12431)
+(656419823, 64, 'Big Nose Rd', '1234b', 'Metairie', 'LA', 70697)
+(656419823, 11223, 'Cucumber Ln', NULL, 'Kenner', 'LA', 70065)
+(123123321, 50, 'Callaway Ln', '201', 'Jackson', 'MS', 78890)
+(123123321, 892, 'Old Town Rd', NULL, 'Old Town', 'LA', 70932)
+(827349182, 22, 'Genius Ln', NULL, 'Lettsworth', 'LA', 78390)
+(827349182, 5032, 'Smarty Rd', NULL, 'Jarreau', 'LA', 70800)
+
+
+
+--1. Customers with automobiles
+
+SELECT A.Owner_SSN, B.First_Name, B.Last_Name, A.Make, A.Model 
+FROM Automobile A 
+INNER JOIN Customer B on B.SSN = A.Owner_SSN
+
+--2. Home addresses per customer 
+
+SELECT B.First_Name, B.Last_Name, A.Owner_SSN, A.Street_Address, A.Street_Address_Number, A.Apartment_Number, A.City, A.State, A.Zip
+FROM Address A 
+INNER JOIN Customer B on A.Owner_SSN = B.SSN
+
+--3.Concatenated View
+
+CREATE view Full_Address AS 
+SELECT Street_Address_Number + ' ' + Street_Address + ' ' + ISNULL(Apartment_Number, ''), *
+FROM Address;
+
+--4.Convert Height to inches
+
+
+--5.JSON Export
+
+SELECT 
+    CONCAT("[",
+         GROUP_CONCAT(
+              CONCAT("{SSN:'",SSN,"'"),
+              CONCAT("First_Name:'",First_Name,"'"),
+              CONCAT(",Last_Name:'",Last_Name,"'}")
+	      CONCAT(",DOB:'",DOB,"'}")
+              CONCAT(",Height:'",Height,"'}")
+              CONCAT(",Weight:'",Weight,"'}")
+         )
+    ,"]") 
+AS json FROM location;
+INTO OUTFILE 'C:/ProgramData/MySQL/Uploads/location.json'
+
+SELECT 
+    CONCAT("[",
+         GROUP_CONCAT(
+              CONCAT("{Owner_SSN :'",Owner_SSN ,"'"),
+              CONCAT("Make:'",Make,"'"),
+              CONCAT(",Model:'",Model,"'}")
+	      CONCAT(",VIN:'",VIN,"'}")
+         )
+    ,"]") 
+AS json FROM location;
+INTO OUTFILE 'C:/ProgramData/MySQL/Uploads/location.json'
+
+SELECT 
+    CONCAT("[",
+         GROUP_CONCAT(
+              CONCAT("{Owner_SSN:'",Owner_SSN,"'"),
+              CONCAT("Street_Address_Number:'",Street_Address_Number,"'"),
+              CONCAT(",Street_Address:'",Street_Address,"'}")
+	      CONCAT(",Apartment_Number:'",Apartment_Number,"'}")
+              CONCAT(",City:'",City,"'}")
+              CONCAT(",State:'",State,"'}")
+              CONCAT(",ZIP:'",ZIP,"'}")
+         )
+    ,"]") 
+AS json FROM location;
+INTO OUTFILE 'C:/ProgramData/MySQL/Uploads/location.json'
+
+
+--I do not have a ton of expirience creating stored procedures/functions in sql or working with JSON files. I'm familiar with their premise and purpose.
+ I was able to make an attempt at part of the JSON export question but unfortunately I could fully answer either of these last two questions. I would really appreciate the opportunity to expand my skills on subjects like these,
+and I am fully confident in my ability to pick up working these types of tasks. A big reason why I am on the job market is to work for a company where I can continue to expand my skillset. I apologize again for
+my inability to complete this skill assessment 100%, but I am a person who WANTS to continue to grow and learn.
+
+
